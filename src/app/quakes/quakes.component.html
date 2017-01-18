@@ -1,0 +1,19 @@
+ <input 
+    type="text" 
+    [formControl]="mmiValue">
+   <md-card
+    *ngFor="let v of quakes | async">
+    <md-card-title>{{ v.properties.magnitude }}</md-card-title>
+    <md-card-subtitle>{{ v.properties.locality }}</md-card-subtitle>
+    <md-card-content>
+      <p>{{ v.properties.time }}</p>
+      <p>{{ v.properties.mmi }}</p>
+    </md-card-content>
+    <md-card-actions 
+      align="end">
+        <button 
+          (click)="feltIt(v.properties.publicID)">I Felt It</button>
+        <button 
+          (click)="shareIt()">Share</button>
+      </md-card-actions>
+  </md-card>

@@ -1,0 +1,8 @@
+<p>
+  events works!
+</p>
+<ul>
+  <li class="text" *ngFor="let item of events | async">
+    {{ item.$value }}
+  </li>
+</ul>
