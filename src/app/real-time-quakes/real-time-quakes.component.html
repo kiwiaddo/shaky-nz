@@ -1,0 +1,9 @@
+<md-card
+  *ngFor="let v of quakes | async">
+  <md-card-title>{{ v.properties.magnitude }}</md-card-title>
+  <md-card-subtitle>{{ v.properties.locality }}</md-card-subtitle>
+  <md-card-content>
+    <p>{{ v.properties.time }}</p>
+    <p>{{ v.properties.mmi }}</p>
+  </md-card-content>
+</md-card>

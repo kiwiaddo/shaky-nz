@@ -2,6 +2,11 @@
 
 A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](https://api.geonet.org.nz/). Feel free to have a play, fork and contribute!
 
+## Features
+- Angular 2 Material
+- GeoNet NZ API
+- Firebase Database
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
 ## Development server

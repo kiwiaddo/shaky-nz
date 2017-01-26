@@ -12,7 +12,9 @@ import * as firebase from 'firebase';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
 import { QuakesComponent } from './quakes/quakes.component';
+import { RealTimeQuakesComponent } from './real-time-quakes/real-time-quakes.component';
 import { appRoutes } from './app.routes';
+import { UserService } from './services/user.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAi92B0dUz7QJzKkvhpELAvHNS4S2mtVXM",
@@ -26,7 +28,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     EventsComponent,
-    QuakesComponent
+    QuakesComponent,
+    RealTimeQuakesComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -37,7 +40,7 @@ export const firebaseConfig = {
     MaterialModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

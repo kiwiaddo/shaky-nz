@@ -33,7 +33,6 @@ export class QuakesComponent implements OnInit {
     //     .debounceTime(400)        // wait for 400ms pause in events
     //     .distinctUntilChanged()   // ignore if next search term is same as previous
     //     .switchMap(mmiValue => this.gs.getEarthquakes(mmiValue));
-    debugger;
     this.quakes = this.gs.getEarthquakes(event.value); 
   }
 
