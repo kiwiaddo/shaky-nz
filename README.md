@@ -6,6 +6,12 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 - Angular 2 Material
 - GeoNet NZ API
 - Firebase Database
+- Firebase Auth
+
+## Learnings
+- [Route Guards](https://angular.io/docs/ts/latest/guide/router.html#!#guards) 
+
+## Notes
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 

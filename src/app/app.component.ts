@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { AngularFire } from 'angularfire2';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
@@ -15,7 +16,8 @@ export class AppComponent implements OnInit {
   mmiValue = new FormControl();
 
   constructor (
-    private af: AngularFire,
+    private userService: UserService,
+    public af: AngularFire,
     private http: Http
     ) {}
 
@@ -32,6 +34,16 @@ export class AppComponent implements OnInit {
         .distinctUntilChanged()   // ignore if next search term is same as previous
         .switchMap(mmiValue => this.getEarthquakes(mmiValue));
         
+  }
+
+  // public get isLoggedIn (): boolean {
+  //   let auth = this.af.auth.getAuth();
+
+  //   return !auth ? false : !!auth.uid;
+  // }
+
+  logout() {
+     this.userService.logout();
   }
 
  private getEarthquakes (mmiValue: string): Observable<any> {

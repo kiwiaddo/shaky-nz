@@ -2,6 +2,9 @@
   class="md-display-3">
   {{title}}
 </h1>
+<div> {{ (af.auth | async)?.uid }} </div>
+<button
+  (click)="logout()">Logout</button>
 <nav>
   <a
     routerLink="/quakes" 

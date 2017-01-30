@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
@@ -5,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import * as firebase from 'firebase';
 // import { firebaseConfig } from './firebase.conf';
 
@@ -15,6 +16,7 @@ import { QuakesComponent } from './quakes/quakes.component';
 import { RealTimeQuakesComponent } from './real-time-quakes/real-time-quakes.component';
 import { appRoutes } from './app.routes';
 import { UserService } from './services/user.service';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAi92B0dUz7QJzKkvhpELAvHNS4S2mtVXM",
@@ -24,15 +26,21 @@ export const firebaseConfig = {
     messagingSenderId: "790142800054"
 };
 
+const firebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect
+};
+
 @NgModule({
   declarations: [
     AppComponent,
     EventsComponent,
     QuakesComponent,
-    RealTimeQuakesComponent
+    RealTimeQuakesComponent,
+    LoginComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -40,7 +48,7 @@ export const firebaseConfig = {
     MaterialModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ UserService ],
+  providers: [ AuthGuard, UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
