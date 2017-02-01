@@ -3,8 +3,11 @@
   {{title}}
 </h1>
 <div> {{ (af.auth | async)?.uid }} </div>
-<button
-  (click)="logout()">Logout</button>
+<div
+  *ngIf="loggedIn">
+  <button
+    (click)="logout()">Logout</button>
+</div>
 <nav>
   <a
     routerLink="/quakes" 

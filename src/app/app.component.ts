@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   title = 'Shaky NZ';
   quakes: Observable<Array<any>>;
   mmiValue = new FormControl();
+  loggedIn = false;
 
   constructor (
     private userService: UserService,
@@ -27,6 +28,19 @@ export class AppComponent implements OnInit {
     // operation.subscribe(quakes => {
     //   this.quakes = quakes;
     // })
+    this.af.auth.subscribe(user => {
+      debugger;
+      if(user) {
+        // user logged in
+        // this.user = user;
+        this.loggedIn = true;
+      }
+      else {
+        // user not logged in
+        // this.user = {};
+        this.loggedIn = false
+      }
+    });
 
     this.quakes = 
       this.mmiValue.valueChanges
