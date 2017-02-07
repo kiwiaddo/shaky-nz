@@ -3,6 +3,7 @@ import { AngularFire, AuthProviders, AuthMethods, FirebaseAuthState } from 'angu
 
 @Injectable()
 export class UserService {
+  redirectUrl: string;
 
   constructor(
     private af: AngularFire
@@ -17,6 +18,7 @@ export class UserService {
       method: AuthMethods.Popup,
     });
   }
+
   /**
    * Logs out the current user
    */
@@ -24,4 +26,11 @@ export class UserService {
     return this.af.auth.logout();
   }
 
+  isLoggedIn(): boolean {
+      let authState = this.af.auth.getAuth();
+
+      if (authState !== null && authState.uid) { return true; }
+
+      return false;
+  }
 }

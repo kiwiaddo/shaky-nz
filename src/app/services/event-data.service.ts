@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 export class EventDataService {
 
   constructor(
-      private af: AngularFire) { }
+      private af: AngularFire) {
+        console.debug('EventDataService instance')
+      }
 
   public addEvent (publicID: string): void {
     var events = this.af.database.list('/events');

@@ -7,7 +7,9 @@ export class GnsDataService {
 
   constructor(
     private http: Http
-  ) { }
+  ) { 
+    console.debug('GnsDataService instance')
+  }
 
   public getEarthquakes (mmiValue: number): Observable<any> {
     return this.http

@@ -1,4 +1,4 @@
-import { AngularFire } from 'angularfire2';
+import { UserService } from './services/user.service';
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
  
@@ -6,22 +6,25 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 export class AuthGuard implements CanActivate {
  
     constructor(
-        private af: AngularFire,
+        private userService: UserService,
         private router: Router) { }
  
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        let s = this.af.auth.subscribe(auth => {
-                if(auth) {
-                    console.log('logged in');
-                    // logged in so return true
-                    return true;
-                } else {
-                    console.log('not logged in');
-                    // not logged in so redirect to login page with the return url and return false
-                    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
-                }
-            });
+         let url: string = state.url;
 
-        return false;
+        return this.checkLogin(url);
     }
+
+    checkLogin(url: string): boolean {
+      if(this.userService.isLoggedIn()) {
+          return true;
+      }
+
+      // Store the attempted URL for redirecting
+      // this.authService.redirectUrl = url;
+
+      // Navigate to the login page with extras
+      this.router.navigate(['/login']);
+      return false;
+  }
 }

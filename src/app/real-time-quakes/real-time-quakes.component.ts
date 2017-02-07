@@ -1,3 +1,4 @@
+import { UserService } from './../services/user.service';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { FormControl } from '@angular/forms';
@@ -11,7 +12,7 @@ import { EventDataService } from '../services/event-data.service';
   selector: 'app-real-time-quakes',
   templateUrl: './real-time-quakes.component.html',
   styleUrls: ['./real-time-quakes.component.css'],
-  providers: [GnsDataService, EventDataService]
+  providers: []
 })
 export class RealTimeQuakesComponent implements OnInit {
   quakes: Observable<Array<any>>;
