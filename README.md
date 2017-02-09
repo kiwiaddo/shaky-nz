@@ -10,6 +10,11 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 
 ## Learnings
 - [Route Guards](https://angular.io/docs/ts/latest/guide/router.html#!#guards) 
+- [High Performance Animations](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
+
+## Todo
+- Allow user to plot intensity of quake
+- Shake canvas/document based on intensity https://jsfiddle.net/kiwiaddo/6pzv1w28/
 
 ## Notes
 

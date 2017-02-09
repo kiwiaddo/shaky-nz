@@ -11,8 +11,7 @@ import { EventDataService } from '../services/event-data.service';
 @Component({
   selector: 'app-real-time-quakes',
   templateUrl: './real-time-quakes.component.html',
-  styleUrls: ['./real-time-quakes.component.css'],
-  providers: []
+  styleUrls: ['./real-time-quakes.component.css']
 })
 export class RealTimeQuakesComponent implements OnInit {
   quakes: Observable<Array<any>>;

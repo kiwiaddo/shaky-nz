@@ -10,8 +10,7 @@ import { EventDataService } from '../services/event-data.service';
 @Component({
   selector: 'app-quakes',
   templateUrl: './quakes.component.html',
-  styleUrls: ['./quakes.component.css'],
-  providers: [GnsDataService, EventDataService]
+  styleUrls: ['./quakes.component.css']
 })
 export class QuakesComponent implements OnInit {
   quakes: Observable<Array<any>>;
