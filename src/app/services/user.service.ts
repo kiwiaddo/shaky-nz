@@ -33,4 +33,12 @@ export class UserService {
 
       return false;
   }
+
+   userId(): string {
+      let authState = this.af.auth.getAuth();
+
+      if (authState !== null && authState.uid) { return authState.uid; }
+
+      return null;
+  }
 }

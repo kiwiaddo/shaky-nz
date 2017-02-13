@@ -1,3 +1,4 @@
+import { EventDataService } from './../services/event-data.service';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
@@ -10,10 +11,10 @@ export class EventsComponent implements OnInit {
   events: FirebaseListObservable<any[]>;
  
   constructor(
-    private af: AngularFire
+      private eventDataService: EventDataService,
   ) { }
 
   ngOnInit() {
-    this.events = this.af.database.list('/events');
+    this.events = this.eventDataService.getEvents();
   }
 }

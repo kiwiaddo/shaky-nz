@@ -9,12 +9,17 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 - Firebase Auth
 
 ## Learnings
+- [Dependancy Injection](https://angular.io/docs/ts/latest/guide/dependency-injection.html#!#angular-dependency-injection)
 - [Route Guards](https://angular.io/docs/ts/latest/guide/router.html#!#guards) 
 - [High Performance Animations](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
+- [CSS3 Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
+- [HTML5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 
 ## Todo
+- Finish
 - Allow user to plot intensity of quake
 - Shake canvas/document based on intensity https://jsfiddle.net/kiwiaddo/6pzv1w28/
+- Capture user input into an array https://jsfiddle.net/kiwiaddo/j3shLoyh/2/
 
 ## Notes
 
