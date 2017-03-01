@@ -14,6 +14,7 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 - [High Performance Animations](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 - [CSS3 Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
 - [HTML5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+- [Angular Template syntax](https://medium.com/front-end-hacking/angular-2-a-quick-intro-about-template-syntax-121f9b160a64#.pmixw0h2v) 
 
 ## Todo
 - Typescript type maps for geonet
