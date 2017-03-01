@@ -3,6 +3,6 @@
 </p>
 <ul>
   <li class="text" *ngFor="let item of events | async">
-    {{ item.$value }}
+    {{ item.quake.locality }}
   </li>
 </ul>

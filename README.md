@@ -16,10 +16,11 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 - [HTML5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 
 ## Todo
-- Finish
+- Typescript type maps for geonet
 - Allow user to plot intensity of quake
 - Shake canvas/document based on intensity https://jsfiddle.net/kiwiaddo/6pzv1w28/
 - Capture user input into an array https://jsfiddle.net/kiwiaddo/j3shLoyh/2/
+- Restructure data by writing to events list and user-events list https://firebase.google.com/docs/database/web/read-and-write
 
 ## Notes
 

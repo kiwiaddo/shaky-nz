@@ -1,3 +1,4 @@
+import { IGnsQuake } from './../interfaces/gns-quake';
 import { UserService } from './user.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Injectable } from '@angular/core';
@@ -9,15 +10,15 @@ export class EventDataService {
       private af: AngularFire,
       private userService: UserService) {}
 
-  public getEvents (): FirebaseListObservable<any[]> {
+  public getEvents (): FirebaseListObservable<IGnsQuake[]> {
     return this.af.database.list('users/' + this.userService.userId() + '/events');
   }
 
-  public addEvent (publicID: string): void {
+  public addEvent (quake: IGnsQuake): void {
     var events = this.af.database.list('users/' + this.userService.userId() + '/events');
     
     events.push({
-        quakePublicId : publicID
+        quake : quake
     });
   }
 }

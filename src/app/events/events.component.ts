@@ -1,3 +1,4 @@
+import { IGnsQuake } from './../interfaces/gns-quake';
 import { EventDataService } from './../services/event-data.service';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -8,7 +9,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  events: FirebaseListObservable<any[]>;
+  events: FirebaseListObservable<IGnsQuake[]>;
  
   constructor(
       private eventDataService: EventDataService,

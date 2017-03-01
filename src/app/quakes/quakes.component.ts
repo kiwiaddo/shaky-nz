@@ -6,6 +6,7 @@ import { MdSliderChange } from '@angular/material'
 
 import { GnsDataService } from '../services/gns-data.service';
 import { EventDataService } from '../services/event-data.service';
+import { IGnsQuake } from '../interfaces/gns-quake';
 
 @Component({
   selector: 'app-quakes',
@@ -35,9 +36,9 @@ export class QuakesComponent implements OnInit {
     this.quakes = this.gs.getEarthquakes(event.value); 
   }
 
-  feltIt (publicID: string) {
-    console.debug("felt it "+ publicID);
-    this.eventDataService.addEvent(publicID);
+  feltIt (quake: IGnsQuake) {
+    console.debug("felt it "+ quake.publicId);
+    this.eventDataService.addEvent(quake);
   }
 
   shareIt () {
