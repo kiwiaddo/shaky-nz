@@ -1,20 +1,28 @@
-<h1
-  class="md-display-3">
-  {{title}}
-</h1>
-<div> {{ (af.auth | async)?.uid }} </div>
-<div
-  *ngIf="loggedIn">
-  <button
-    (click)="logout()">Logout</button>
-</div>
-<nav>
+<!--<div> {{ (af.auth | async)?.uid }} </div>-->
+
+<nav
+  md-tab-nav-bar>
   <a
+    md-tab-link
+    routerLinkActive #quakeActive="routerLinkActive"
+    [active]="quakeActive.isActive"
     routerLink="/quakes">Quakes</a>
-  <a 
+  <a
+    md-tab-link
+    routerLinkActive #eventsActive="routerLinkActive"
+    [active]="eventsActive.isActive"
     routerLink="/events">Events</a>
   <a 
-    routerLink="/real-time-quakes"
-    routerLinkActive="active">All</a>
+    md-tab-link
+    routerLinkActive #realTime="routerLinkActive"
+    [active]="realTime.isActive"
+    routerLink="/real-time-quakes">All</a>
+
+  <div
+    *ngIf="loggedIn">
+    <button
+      md-button
+      (click)="logout()">Logout</button>
+</div>
 </nav>
 <router-outlet></router-outlet>
