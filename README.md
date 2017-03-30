@@ -15,6 +15,8 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 - [CSS3 Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
 - [HTML5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 - [Angular Template syntax](https://medium.com/front-end-hacking/angular-2-a-quick-intro-about-template-syntax-121f9b160a64#.pmixw0h2v) 
+- [Dialogs in Material 2]
+(https://medium.com/@tarik.nzl/making-use-of-dialogs-in-material-2-mddialog-7533d27df41)
 
 ## Todo
 - Typescript type maps for geonet
@@ -22,6 +24,7 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 - Shake canvas/document based on intensity https://jsfiddle.net/kiwiaddo/6pzv1w28/
 - Capture user input into an array https://jsfiddle.net/kiwiaddo/j3shLoyh/2/
 - Restructure data by writing to events list and user-events list https://firebase.google.com/docs/database/web/read-and-write
+- Look at Reactive Forms (perhaps in a different project) https://angular.io/docs/ts/latest/guide/reactive-forms.html#!#intro
 
 ## Notes
 
