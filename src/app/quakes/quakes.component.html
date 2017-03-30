@@ -1,6 +1,4 @@
- <!--<input 
-    type="text" 
-    [formControl]="mmiValue">-->
+ <span>{{ result }}
 
 <md-slider
   min="1" 
@@ -20,7 +18,7 @@
   <md-card-actions 
     align="end">
       <button 
-        (click)="feltIt(v.properties)">I Felt It</button>
+        (click)="openQuakeDataDialog(v.properties)">I Felt It</button>
       <button 
         (click)="shareIt()">Share</button>
     </md-card-actions>

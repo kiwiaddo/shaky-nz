@@ -20,6 +20,8 @@ import { RealTimeQuakesComponent } from './real-time-quakes/real-time-quakes.com
 import { appRoutes } from './app.routes';
 import { UserService } from './services/user.service';
 import { LoginComponent } from './login/login.component';
+import { QuakeDataComponent } from "app/quake-data/quake-data.component";
+import { DialogsService } from "app/services/dialogs.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAi92B0dUz7QJzKkvhpELAvHNS4S2mtVXM",
@@ -52,13 +54,18 @@ const firebaseAuthConfig = {
         EventsComponent,
         QuakesComponent,
         RealTimeQuakesComponent,
-        LoginComponent
+        LoginComponent,
+        QuakeDataComponent
     ],
     providers: [ // singleton services
         AuthGuard, 
         UserService,
         GnsDataService,
-        EventDataService
+        EventDataService,
+        DialogsService
+    ],
+    entryComponents: [ 
+        QuakeDataComponent 
     ]
 })
 export class CoreModule { }

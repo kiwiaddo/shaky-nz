@@ -2,11 +2,13 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
-import { MdSliderChange } from '@angular/material'
+import { MdSliderChange, MdDialog, MdDialogRef } from '@angular/material'
 
 import { GnsDataService } from '../services/gns-data.service';
 import { EventDataService } from '../services/event-data.service';
 import { IGnsQuake } from '../interfaces/gns-quake';
+import { QuakeDataComponent } from "app/quake-data/quake-data.component";
+import { DialogsService } from "app/services/dialogs.service";
 
 @Component({
   selector: 'app-quakes',
@@ -17,10 +19,13 @@ export class QuakesComponent implements OnInit {
   quakes: Observable<Array<any>>;
   // mmiValue = new FormControl();
   mmiValue: number = 3;
+  dialogRef: MdDialogRef<string>;
+  result: string;
 
   constructor (
       private eventDataService: EventDataService,
-      private gs: GnsDataService
+      private gs: GnsDataService,
+      private dialogsService: DialogsService
     ) {}
 
   ngOnInit () {
@@ -43,5 +48,11 @@ export class QuakesComponent implements OnInit {
 
   shareIt () {
     console.debug("shared it");
+  }
+
+  openQuakeDataDialog(quake: IGnsQuake) {
+     this.dialogsService
+      .confirm('How bad was this earthquake?')
+      .subscribe(res => this.result = res);
   }
 }
