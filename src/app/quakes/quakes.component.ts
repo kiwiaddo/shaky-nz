@@ -1,3 +1,4 @@
+import { IQuakeData } from './../interfaces/quake-data';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { FormControl } from '@angular/forms';
@@ -20,7 +21,6 @@ export class QuakesComponent implements OnInit {
   // mmiValue = new FormControl();
   mmiValue: number = 3;
   dialogRef: MdDialogRef<string>;
-  result: string;
 
   constructor (
       private eventDataService: EventDataService,
@@ -41,10 +41,10 @@ export class QuakesComponent implements OnInit {
     this.quakes = this.gs.getEarthquakes(event.value); 
   }
 
-  feltIt (quake: IGnsQuake) {
-    console.debug("felt it "+ quake.publicId);
-    this.eventDataService.addEvent(quake);
-  }
+  // feltIt (quake: IGnsQuake) {
+  //   console.debug("felt it "+ quake.publicId);
+  //   this.eventDataService.addEvent(quake);
+  // }
 
   shareIt () {
     console.debug("shared it");
@@ -53,6 +53,11 @@ export class QuakesComponent implements OnInit {
   openQuakeDataDialog(quake: IGnsQuake) {
      this.dialogsService
       .confirm('How bad was this earthquake?')
-      .subscribe(res => this.result = res);
+      .subscribe((quakeData: any) => { 
+        console.debug("description=" + quakeData.description + ", severity=" + quakeData.severity);
+        this.eventDataService.addEvent(quake, quakeData);
+      },
+      (error) => console.debug("error"),
+      () => console.debug("complete"));
   }
 }
