@@ -8,7 +8,7 @@ import { RealTimeQuakesComponent } from './real-time-quakes/real-time-quakes.com
 
 export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'events', component: EventsComponent, canActivate: [AuthGuard] },
   { path: 'quakes', component: QuakesComponent },
+  { path: 'events', component: EventsComponent, canActivate: [AuthGuard] },
   { path: 'real-time-quakes', component: RealTimeQuakesComponent },
 ];
