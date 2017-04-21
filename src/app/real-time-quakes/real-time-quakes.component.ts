@@ -16,6 +16,7 @@ import { EventDataService } from '../services/event-data.service';
 export class RealTimeQuakesComponent implements OnInit {
   quakes: Observable<Array<any>>;
   mmiValue: number = 0;
+  isLoading: boolean = true;
 
   constructor (
       private eventDataService: EventDataService,
@@ -27,6 +28,7 @@ export class RealTimeQuakesComponent implements OnInit {
       Observable
         .interval(5000)
         .flatMap(() => {
+          this.isLoading = false;
           return this.gs.getEarthquakes(this.mmiValue)
         });
   }

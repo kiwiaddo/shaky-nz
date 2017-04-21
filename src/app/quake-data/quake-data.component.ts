@@ -1,3 +1,4 @@
+import { IQuakeData } from './../interfaces/quake-data';
 import { UserService } from './../services/user.service';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
@@ -13,16 +14,16 @@ import { EventDataService } from '../services/event-data.service';
   <div>
     <h1>{{ title }}</h1>
     <md-input-container>
-      <input mdInput #description placeholder="Description">
+      <input mdInput #description placeholder="Description" type="text">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput #severity placeholder="Severity" type="number">
     </md-input-container>
   </div>
-  <button md-button (click)="done(description.value)">Done</button>`,
+  <button md-button (click)="done(description.value, severity.value)">Done</button>`,
   selector: 'app-quake-data'
 })
 export class QuakeDataComponent implements OnInit {
-  quakes: Observable<Array<any>>;
-  mmiValue: number = 0;
-
   public title: string;
 
   constructor (
@@ -32,15 +33,10 @@ export class QuakeDataComponent implements OnInit {
     ) {}
 
   ngOnInit () {
-    this.quakes = 
-      Observable
-        .interval(5000)
-        .flatMap(() => {
-          return this.gs.getEarthquakes(this.mmiValue)
-        });
-    }
+  }
 
-  done (description: string) {
-    this.dialogRef.close(description);
+  done (description: string, severity: number) {
+    let quakedata = <IQuakeData> { description: description, severity: severity };
+    this.dialogRef.close(quakedata);
   }
 }
