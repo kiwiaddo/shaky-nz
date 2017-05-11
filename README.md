@@ -1,6 +1,10 @@
 # Shaky NZ
 
+This app is deployed here: https://shaky-nz.firebaseapp.com/
+
 A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](https://api.geonet.org.nz/). Feel free to have a play, fork and contribute!
+
+It allows you to view recent earthquakes in NZ, filter by their intensity and (if you have a google account) save them to your profile.
 
 ## Features
 - Angular 2 Material
@@ -28,7 +32,7 @@ A app using Angular 2, Angular 2 Material, Observables and the [GeoNet API](http
 
 ## Notes
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli).
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

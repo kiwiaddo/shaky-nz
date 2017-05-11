@@ -20,7 +20,8 @@ import { EventDataService } from '../services/event-data.service';
       <input mdInput #severity placeholder="Severity" type="number">
     </md-input-container>
   </div>
-  <button md-button (click)="done(description.value, severity.value)">Done</button>`,
+  <button md-raised-button (click)="done(description.value, severity.value)">Done</button>
+  <button md-button (click)="cancel()">Cancel</button>`,
   selector: 'app-quake-data'
 })
 export class QuakeDataComponent implements OnInit {
@@ -38,5 +39,9 @@ export class QuakeDataComponent implements OnInit {
   done (description: string, severity: number) {
     let quakedata = <IQuakeData> { description: description, severity: severity };
     this.dialogRef.close(quakedata);
+  }
+
+  cancel () {
+    this.dialogRef.close();
   }
 }
