@@ -2,7 +2,7 @@ import { IEventView } from './../interfaces/event-view';
 import { IGnsQuake } from './../interfaces/gns-quake';
 import { EventDataService } from './../services/event-data.service';
 import { Component, Injectable, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-events',

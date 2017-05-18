@@ -1,5 +1,5 @@
 import { UserService } from './services/user.service';
-import { AngularFire } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { FormControl } from '@angular/forms';
@@ -17,12 +17,12 @@ export class AppComponent implements OnInit {
 
   constructor (
     private userService: UserService,
-    public af: AngularFire,
+    private afAuth: AngularFireAuth,
     private http: Http
     ) {}
 
   ngOnInit () {
-    this.af.auth.subscribe(user => {
+    this.afAuth.authState.subscribe(user => {
         this.loggedIn = !!user;
     }); 
   }
