@@ -1,3 +1,4 @@
+import { IQuakeData } from './../interfaces/quake-data';
 import { Observable } from 'rxjs/Rx';
 import { QuakeDataComponent } from '../quake-data/quake-data.component';
 import { MdDialogRef, MdDialog, MdDialogConfig } from '@angular/material';
@@ -8,7 +9,7 @@ export class DialogsService {
 
     constructor(private dialog: MdDialog) { }
 
-    public confirm(title: string): Observable<string> {
+    public confirm(title: string): Observable<IQuakeData> {
 
         let dialogRef: MdDialogRef<QuakeDataComponent>;
 

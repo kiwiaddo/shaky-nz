@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
+body {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
 h1,h2,h3,h4,h5,h6 {
     font-family: Roboto,"Helvetica Neue",sans-serif;
 }
+
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */

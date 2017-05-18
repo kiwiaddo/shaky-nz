@@ -19,16 +19,9 @@
   <md-card-subtitle>{{ v.properties.locality }}</md-card-subtitle>
   <md-card-content>
     <p>{{ v.properties.time | date: 'short' }}</p>
-    <!--<p>{{ v.properties.mmi }}</p>-->
-  </md-card-content>
-  <md-card-actions 
-    align="end">
-      <button
+    <button
         md-raised-button
         color="primary"
         (click)="openQuakeDataDialog(v.properties)">I Felt It</button>
-      <button
-        md-raised-button
-        (click)="shareIt()">Share</button>
-    </md-card-actions>
+  </md-card-content>
 </md-card>

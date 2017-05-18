@@ -1,6 +1,6 @@
 <h1>
   Events that I felt
-<h1>
+</h1>
 <md-list>
   <md-list-item 
       *ngFor="let item of eventViews | async">
@@ -8,3 +8,7 @@
       <p md-line>{{ item.userData.description }} - {{ item.userData.severity }}</p>
   </md-list-item>
 <md-list>
+<div
+  *ngIf="!eventViews">
+  No events felt yet
+</div>
